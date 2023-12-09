@@ -1,4 +1,4 @@
-import React,{ useState } from "react" ; 
+import React from "react" ; 
 import Logo from "./../images/logo.png" ;
 import image from "./../images/image.png" ;
 import './../index.css' ;
@@ -10,12 +10,12 @@ function Main(){
         
       <div className="flex justify-between items-centerw=full h=full bg-c3eefb fixed">
          <div className="flex items-center">
-         <img src={Logo} className='absolute top-1 left-1 w-20 h-20 ' />
+         <img src={Logo} alt="logo" className='absolute top-1 left-1 w-20 h-20 ' />
          <span className=' text-[#15245B] text-lg font-signature '>ciTopia</span>
 
          </div>
          <div className="image">
-         <img src={image} className="" />
+         <img src={image}  alt="photo" className="" />
          </div>
          <div className="header">
                <h1 className=''>
