@@ -1,11 +1,12 @@
 import Main from './pages/main'
+import Login from './pages/login'
 import './index.css' ;
 
 function App() {
   
   return (
     <div className="App">
-      <Main></Main>
+        <Login></Login>
     </div>
   );
 }

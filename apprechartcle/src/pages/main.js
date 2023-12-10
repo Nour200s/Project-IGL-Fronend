@@ -1,6 +1,6 @@
 import React from "react" ; 
 import Logo from "./../images/logo.png" ;
-import image from "./../images/image.png" ;
+import image from "./../images/photo.png" ;
 
 
 function Main(){
@@ -16,10 +16,10 @@ function Main(){
          <span className=' text-[#FBBC05] '>Topia</span>
          </div>
          <div className="image">
-         <img src={image}  alt="photo" className=" float-right w-341 h-200 object-cover" />
+         <img src={image}  alt="photo" className=" float-right w-90 h-70 object-cover" />
          </div>
          <div className="">
-         <div className="text-3xl font-signature ml-10 mt-3">
+         <div className="text-3xl font-signature- ml-10 mt-3">
 
                <h1 className=' '>
                 <span className="text-[#F57581]">Exploration</span>
