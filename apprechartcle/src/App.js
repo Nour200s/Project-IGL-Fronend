@@ -1,14 +1,19 @@
-import Main from './pages/main'
-import Login from './pages/login'
 import './index.css' ;
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MainPage from './pages/main';
+import LoginPage from './pages/login';
+import SearchPage from './pages/search'
+import SearchResultPage from './pages/searchResult'
+import ResultsPage from './components/Results'
 
-function App() {
-  
+const App = () => {
   return (
     <div className="App">
-        <Login></Login>
+   <SearchResultPage></SearchResultPage>
     </div>
   );
-}
+};
 
 export default App;
+

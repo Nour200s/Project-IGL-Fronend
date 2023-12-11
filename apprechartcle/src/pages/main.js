@@ -1,7 +1,7 @@
 import React from "react" ; 
 import Logo from "./../images/logo.png" ;
 import image from "./../images/photo.png" ;
-
+import { Link } from 'react-router-dom';
 
 function Main(){
    
@@ -16,7 +16,7 @@ function Main(){
          <span className=' text-[#FBBC05] '>Topia</span>
          </div>
          <div className="image">
-         <img src={image}  alt="photo" className=" float-right w-90 h-70 object-cover" />
+         <img src={image}  alt="" className=" float-right w-90 h-70 object-cover" />
          </div>
          <div className="">
          <div className="text-3xl font-signature- ml-10 mt-3">
@@ -36,7 +36,7 @@ function Main(){
          </div>
          <div className="space-x-4 ml-10">
          <button className=" space-x-4 space-y-4 px-7 py-2 bg-[#15245B] text-[#c3eefb] rounded-full pr-8 pl-8"> S'inscrire</button>
-         <button className=" space-x-4 space-y-4 px-7 py-2 bg-[#c3eefb] text-[#15245B] rounded-full border-2 border-[#15245B] pr-3 pl-3 ">se connecter</button>
+         <Link to="./login"> <button className=" space-x-4 space-y-4 px-7 py-2 bg-[#c3eefb] text-[#15245B] rounded-full border-2 border-[#15245B] pr-3 pl-3 ">se connecter</button> </Link>
          </div>
       </div>
      
