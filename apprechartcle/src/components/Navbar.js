@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className=' pb-8 pt-8  bg-[#c3eefb]' >
+    <div className=' pb-8 pt-8  bg-[#c3eefb] ' >
         
-        <div className="  flex justify-between ">
+        <div className=" flex justify-between ">
           
                  <div className="text-2xl font-signature">
                     <img src={Logo} alt="logo" className='w-10  ml-8 inline-block items-center  ' />
