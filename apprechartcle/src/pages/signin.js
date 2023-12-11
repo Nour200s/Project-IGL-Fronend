@@ -7,42 +7,42 @@ function Signin() {
   return (
     <div className="flex w-full   ">
            
-            <div className=" flex-wrap w-full h-full bg-[#c3eefb] justify-center items-center md:flex-row md:space-x-6  md:space-y-0  ">
-                   <div className="text-4xl font-signature mt-2 ">
+            <div className=" flex-wrap w-full  h-full  bg-[#c3eefb] justify-center  items-center  md:flex-row md:space-x-6  md:space-y-0  ">
+                   <div className="text-40px font-signature font-semibold mt-2 font-">
                    <img src={Logo} alt="logo" className='w-25 inline-block items-center' />
                     <span className=' text-[#15245B] '>Ci</span>
                     <span className=' text-[#FBBC05] '>Topia</span>
                    </div>
                    <div className="hidden sm:block">
-                   <img src={photo3} alt=""  className="ml-20 mt-6" />
+                   <img src={photo3} alt=""  className="" />
                    </div>
             </div>
-            <div className="w-full h-full bg-[#FAFAFA] font-signature ml-20 mt-20 ">
+            <div className="w-full h-full bg-[#FAFAFA] font-signature font-extrabold  ml-20 mt-20 ">
                  
-                   <h1 className=" text-[#15245B] font-signature text-4xl ">Welcome back To <br /> <span className="text-[#FBBC05]" >Sci</span> <span className="text-[#F57581] ">Topia !</span> </h1>
+                   <h1 className=" text-[#15245B] font-signature text-custom ">Welcome To <br /> <span className="text-[#FBBC05]" >Sci</span> <span className="text-[#F57581] ">Topia !</span> </h1>
                     <form>
                         
-                        <div>
-                            <label >User Name</label>
+                        <div className='font-signature font-semibold text-28px text-[#15245B] '>
+                            <label >Nom Utilisateur</label>
                         </div>
-                        <div> <input placeholder="Enter Your User Name" className="rounded-lg ring-1 ring-[#15245B] mt-2 p-2   focus:outline-none" type="text" /></div>
+                        <div> <input placeholder="Entrer votre nom" className="rounded-md text-21px ring-1 ring-[#15245B] mt-2 p-2 text-[#A59E9E] font-normal   focus:outline-none" type="text" /></div>
                         <div>
-                            <label >E-mail</label>
+                            <label className='font-signature font-semibold text-28px text-[#15245B] ' >E-mail</label>
                         </div>
-                        <div> <input placeholder="Enter Your E-mail" className="rounded-lg ring-1 ring-[#15245B] mt-2 p-2   focus:outline-none" type="text" /></div>
-                        <div>
-                            <label >Password</label>
+                        <div> <input placeholder="Entrer votre E-mail" className="rounded-md  text-21px ring-1 ring-[#15245B] mt-2 p-2 text-[#A59E9E] font-normal    focus:outline-none" type="text" /></div>
+                        <div className='font-signature font-semibold text-28px text-[#15245B]'>
+                            <label >Mot de passe</label>
                         </div>
-                        <div><input placeholder="Enter Your Password" className="rounded-lg  mt-2 p-2   ring-1 ring-[#15245B]  focus:outline-none" type="password" /></div>
+                        <div><input placeholder="Entrer votre mot de passe" className="rounded-md  text-21px mt-2 p-2   ring-1 ring-[#15245B] text-[#A59E9E] font-normal  focus:outline-none" type="password" /></div>
                         <div className="flex justify-between text-[#15245B] py-2">
-                            <p className="flex items-center"><input className="mr-2" type="checkbox" />I agree to the Terms of services and privacy policy</p>
+                            <p className="flex items-center text-[#A59E9E] font-normal"><input className="mr-2  " type="checkbox" />I agree to the Terms of services and privacy policy</p>
                         </div>
-                        <button className="w-full my-5 py-2  bg-[#15245B] text-[#FAFAFA] rounded-full pr-8 pl-8">Sign In</button>
-                        <button className="w-full my-5 py-2  bg-[#FAFAFA]  text-[#15245B] rounded-full pr-8 pl-8 flex items-center justify-center rounded-full border-2 border-[#15245B]">continue with Google <img src={Google} alt="google"  className="w-8 h-8" /></button>
+                        <button className="w-full my-5 py-2  bg-[#15245B] text-[#FAFAFA] font-semibold rounded-full  pr-8 pl-8">S'inscrire</button>
+                        <button className="w-full my-5 py-2  bg-[#FAFAFA]  text-[#15245B] font-semibold rounded-full pr-8 pl-8 flex items-center justify-center  border-2 border-[#15245B]">Continuer avec Google<img src={Google} alt="google"  className="w-8 h-8" /></button>
                     </form>
-                      <div className="flex items-center justify-center">
-                      <p>Already have an account?</p>
-                      <button className="text-[#F57581] ">Log In</button>
+                      <div className="flex items-center justify-center font-medium">
+                      <p className=' text-[#263238]'>Vous avez déjà un compte?</p>
+                      <button className="text-[#F57581] ">Se connecter</button>
                       </div>
 
             </div>

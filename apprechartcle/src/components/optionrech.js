@@ -41,7 +41,7 @@ const Options = () =>{
      return(
            <section>
                  <div>
-                     <h1 className='font-signature font-extrabold text-[#15245B]   text-sm/[50px]'> Outils de Recherche Scientifique </h1>  
+                     <h1 className='font-signature font-extrabold text-[#15245B] mt-6 ml-6 text-50px'> Outils de Recherche <br />Scientifique </h1>  
                      <div className='flex items-stretch ml-6 mr-4 font-signature '>
                         {
                             options.map((option,index) =>(
