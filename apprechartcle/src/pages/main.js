@@ -1,6 +1,6 @@
 import React from "react" ; 
 import Logo from "./../images/logo.png" ;
-import image from "./../images/photo.png" ;
+import image from "./../images/photo.png" ; 
 
 
 function Main(){
@@ -9,19 +9,15 @@ function Main(){
  
     return (
         
-      <div className=" w-full h-full bg-[#c3eefb]  fixed top-0 left-0 right-0">
-         <div className="text-2xl font-signature mt-6">
-         <img src={Logo} alt="logo" className='w-20 inline-block items-center  ' />
-         <span className=' text-[#15245B] '>Ci</span>
-         <span className=' text-[#FBBC05] '>Topia</span>
-         </div>
+      <div className=" mt-0 p-0 h-screen bg-[#c3eefb]  ">
          <div className="image">
          <img src={image}  alt="photo" className=" float-right w-90 h-70 object-cover" />
          </div>
-         <div className="">
-         <div className="text-3xl font-signature- ml-10 mt-3">
 
-               <h1 className=' '>
+         <div className="">
+         <div className="text-3xl font-signature- ml-10 ">
+
+               <h1 className=''>
                 <span className="text-[#F57581]">Exploration</span>
                 <span className="text-[#15245B]">Scientifique</span>
                </h1>
