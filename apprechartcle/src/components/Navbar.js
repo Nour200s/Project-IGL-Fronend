@@ -6,17 +6,17 @@ import { Link } from 'react-router-dom';
 
 function Navbar() {
   return (
-    <div className=' pb-8 pt-8  bg-[#c3eefb] ' >
+    <div className=' flex justify-between pb-8 pt-8  bg-[#c3eefb]  ' >
         
-        <div className=" flex justify-between ">
+       
           
-                 <div className="text-2xl font-signature">
-                    <img src={Logo} alt="logo" className='w-10  ml-8 inline-block items-center  ' />
+        <div className="text-40px font-signature  font-semibold ml-10 mt-6">
+                   <img src={Logo} alt="logo" className='w-30 inline-block items-center ' />
                     <span className=' text-[#15245B] '>Ci</span>
                     <span className=' text-[#FBBC05] '>Topia</span>
-                  </div>
+                   </div>
                   <div className='flex justify-start'>
-                  <nav className='flex gap-8'>
+                  <nav className='flex gap-8 font-medium font-signature text-23px'>
                           
                                   <Link to="/" className='text-[#15245B]  mt-5 mr-3 '>À propos</Link>
                                   <Link to="/recharche" className='text-[#15245B]  mt-5 mr-3 '>recharche</Link>
@@ -27,7 +27,7 @@ function Navbar() {
                   </div>
         </div>
                   
-         </div>
+        
    
   )
 }

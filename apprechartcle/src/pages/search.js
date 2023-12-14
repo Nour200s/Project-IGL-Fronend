@@ -7,7 +7,7 @@ function search(){
    
     return (
         
-      <div className=" w-full h-full bg-[#c3eefb]  fixed top-0 left-0 right-0 ">
+      <div className=" w-full h-full bg-[#c3eefb]  top-0 left-0 right-0 ">
          <div className="relative flex items-center justify-between p-16  gap-8">
          <div className="ml-10 mt-3">
              <h1 className=' '>
