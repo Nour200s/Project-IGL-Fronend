@@ -8,10 +8,10 @@ const Optionrech=({ title,description,img}) => {
 
   return (
     <section>
-        <div className=' w-25 h-130 bg-[#15245B] text-[#FAFAFA] rounded-[20px]  ml-6 mr-4'>
-        <img src={img} alt="" className='w-20 h-20 ml-10' />
-           <h1 className='font-bold text-sm/[30px]'>{title}</h1>
-           <p className='font-semibold text-sm/[20px]'>{description}</p>
+        <div className=' w-15 h-30 bg-[#15245B] text-[#FAFAFA] rounded-[20px]  ml-6 mr-4'>
+        <img src={img} alt="" className=' flex items-center justify-center ' />
+           <h1 className='font-bold text-30px flex items-center justify-center '>{title}</h1>
+           <p className='font-semibold text-20px text-center'>{description}</p>
         </div>
        
     </section>
@@ -41,7 +41,7 @@ const Options = () =>{
      return(
            <section>
                  <div>
-                     <h1 className='font-signature font-extrabold text-[#15245B] mt-6 ml-6 text-50px'> Outils de Recherche <br />Scientifique </h1>  
+                     <h1 className='flex items-center justify-center  font-signature font-extrabold text-[#15245B] mt-10 ml-6 text-50px'> Outils de Recherche <br />Scientifique </h1>  
                      <div className='flex items-stretch ml-6 mr-4 font-signature '>
                         {
                             options.map((option,index) =>(
