@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import nfav from './../images/nfav.svg';
 import fav from './../images/fav.svg';
-import articlicone from './../images/article.svg'
-import ArticleDetails from "../pages/articleDetailles";
 function Article({ title, author , keyword , sumup }) {
     const [icon, setIcon] = useState(nfav);
 
@@ -58,11 +56,11 @@ const Articles = [
   },
 ];
 
-function Results() {
+function Favourites() {
   return (
     <div className="">
       <h4 className="text-[#15245B] font-poppins font-bold text-30px tracking-wide uppercase m-4 md:text-40px lg:text-50px ">
-        Resultats
+        Favourites
       </h4>
       <div>
         {Articles.map((article, index) => (
@@ -73,4 +71,4 @@ function Results() {
   );
 }
 
-export default Results;
+export default Favourites;

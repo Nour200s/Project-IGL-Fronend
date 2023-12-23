@@ -1,35 +1,36 @@
-import React from "react" ; 
-import image from "./../images/searchimg.png" ;
-import SearchBar from "./../components/searchbar" ;
+import React from "react";
+import image from "./../images/searchimg.png";
+import SearchBar from "./../components/searchbar";
 
-
-function search(){
-   
-    return (
-        
-      <div className=" w-full h-full bg-[#c3eefb]  fixed top-0 left-0 right-0 ">
-         <div className="relative flex items-center justify-between p-16  gap-8">
-         <div className="ml-10 mt-3">
-             <h1 className=' '>
-                <span className="text-[#15245B] font-poppins text-5xl font-extrabold tracking-wide uppercase">Quel Savoir Désirez-vous </span>
-                <span className="text-[#F57581] font-poppins text-5xl font-extrabold tracking-wide uppercase">Découvrir ?</span>
-            </h1>
-              <p className="text-black text-opacity-64 font-poppins text-base font-medium tracking-wide capitalize">
-              Plongez dans une mer d'articles : titres, mots-clés,<br/>
-               auteurs, contenu intégral.<br/> Trouvez ce que vous cherchez <br/>
-              </p>
-         </div>
-         <div className="image">
-         <img src={image}  alt="" className=" float-right w-auto h-auto object-cover" />
-         </div>         
-         </div>
-         <div className="flex justify-center  ">
-            <SearchBar/>
-         </div>
-
+function Search() {
+  return (
+    <div className="min-h-screen bg-[#c3eefb]">
+      <div className="relative p-8 md:p-16 lg:flex lg:items-center lg:justify-between">
+        <div className=" text-30px md:text-40px lg:text-50px text-left">
+          <h1>
+            <span className="text-30px md:text-40px lg:text-50px text-[#15245B] font-poppins font-extrabold">
+              Quel Savoir Désirez-vous Découvrir ?
+            </span>
+          </h1>
+          <p className="text-16px md:text-26px lg:text-30px text-black text-opacity-64 font-poppins font-medium">
+            Plongez dans une mer d'articles : titres, mots-clés,<br />
+            auteurs, contenu intégral.<br /> Trouvez ce que vous cherchez
+            <br />
+          </p>
+        </div>
+        <div className="mt-8 lpx g:mt-0 lg:ml-10 image">
+          <img
+            src={image}
+            alt=""
+            className="w-full h-auto object-cover lg:w-auto lg:h-auto"
+          />
+        </div>
       </div>
-     
-    );
-  }
-  
-  export default search;
+      <div className="flex items-center justify-center p-8 lg:p-0">
+        <SearchBar />
+      </div>
+    </div>
+  );
+}
+
+export default Search;

@@ -13,15 +13,15 @@ import Signin from './pages/signin';
 import Pageprncpl from './pages/pageprncpl';
 import Options from './components/optionrech' ; 
 import SearchResult from './pages/searchResult' ;
-
-
+import ArticleDetailsPage from './pages/articleDetailles';
+import Sidebareaccount from './components/accountsidebar'
+import UserAccount from './pages/userAccount';
+import ProfilSettings from './pages/profileSettings';
+import EditProfil from './pages/editProfil'
 const App = () => {
   return (
     <div className="App">
-        
-      
-           
-      
+          <ArticleDetailsPage/>
     </div>
   );
 };
