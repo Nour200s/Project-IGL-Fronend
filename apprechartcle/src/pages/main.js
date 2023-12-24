@@ -7,11 +7,11 @@ function Main(){
     return (
         
       <div className=" mt-0 p-0 h-full mb-0  grid-cols-{1} ">
-        <div className="bg-[#c3eefb]">
+        <div className=" ">
        
-        <div className=" flex justify-around">
-            <div className="font-signature">
-              <div className="text-26px  font-bold text-50px ml-10 ">
+        <div className=" bg-[#c3eefb] w-full h-full  flex justify-around ">
+            <div className="font-signature pt-8 mt-8  ">
+              <div className=" font-bold text-50px ml-10 ">
                  <h1 className=''>
                  <span className="text-[#F57581]">Exploration</span>
                  <span className="text-[#15245B]">Scientifique</span>
@@ -19,7 +19,7 @@ function Main(){
                  <h1 className='text-[#15245B]  '>Notre Répertoire </h1>
                  <h1 className="text-[#15245B] ">Complet D’articles</h1>
               </div>
-              <p className='text-black text-opacity-64  ml-10 mt-10 mb-10 font-medium'>
+              <p className='text-black text-opacity-64 text-26px  ml-10 mt-10 mb-10 font-medium'>
               Explorez des milliers d'articles scientifiques <br /> provenant de domaines variés.
                Scitopia <br />vous permet de plonger au cœur des 
               découvertes <br />les plus récentes et des connaissances <br /> pointues.
