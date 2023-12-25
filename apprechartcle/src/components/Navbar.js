@@ -53,12 +53,13 @@ function Navbar() {
         
        
           <div className=' flex  justify-between pb-8 pt-8'>
-                <Clogo/>
-               
+          <div className="ml-3 pt-5 mb-3 sm:pt-2 sm:ml-10">
+           <Clogo/>
+            </div>    
                   <div className='flex justify-start'>
                      <nav className='hidden md:flex  gap-8 font-medium font-signature text-23px mt-2 '>                           
                           
-                                  <Link to="/" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'Main' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('Main')}>À propos</Link>
+                                  <Link to="/" className={`text-[#15245B]  mt-5 mr-7  cursor-pointer ${effetActif === 'Main' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('Main')}>À propos</Link>
                                   <Link to="/search" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'rech' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('rech')}>recherche</Link>
                          
                       </nav>

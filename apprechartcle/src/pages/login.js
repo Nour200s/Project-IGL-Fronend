@@ -42,7 +42,7 @@ function Login () {
                          
                         </div>
                     </form>
-                    <div className="flex sm:items-center sm:justify-center font-signature font-medium text-13px md:text-25px mt-3 sm:w-4/5">
+                    <div className="flex sm:items-center sm:justify-center font-signature font-medium text-13px sm:text-21px mt-3 sm:w-4/5">
                       <p className="text-[#263238] mr-1">Vous n'avez pas de compte ?</p>
                       <Link to="/signin">
                       <button className="text-[#F57581] ">S'inscrire</button>

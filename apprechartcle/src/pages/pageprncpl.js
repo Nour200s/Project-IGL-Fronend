@@ -18,7 +18,7 @@ function Pageprncpl(){
              
           <div className=" flex justify-around">
             <div className="font-signature">
-              <div className=" font-bold text-21px sm:text-50px ml-3 sm:ml-10 ">
+              <div className=" font-bold text-21px md:text-26px lg:text-50px ml-3 sm:ml-10 ">
                  <h1 className=''>
                  <span className="text-[#F57581]">Exploration</span>
                  <span className="text-[#15245B]">Scientifique</span>
@@ -26,7 +26,7 @@ function Pageprncpl(){
                  <h1 className='text-[#15245B]  '>Notre Répertoire </h1>
                  <h1 className="text-[#15245B] ">Complet D’articles</h1>
               </div>
-              <p className='text-black text-opacity-64  text-14px sm:text-26px ml-3 sm:ml-10 mt-10 mb-10 font-medium'>
+              <p className='text-black text-opacity-64  text-14px sm:text-21px lg:text-26px ml-3 sm:ml-10 mt-10 mb-10 font-medium'>
               Explorez des milliers d'articles scientifiques <br /> provenant de domaines variés.
                Scitopia <br />vous permet de plonger au cœur des 
               découvertes <br />les plus récentes et des connaissances <br /> pointues.

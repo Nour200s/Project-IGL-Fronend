@@ -20,15 +20,13 @@ import Favourites from './components/Favorites';
 const App = () => {
   return (
     <div className="App">
-     <Router>
-     
-     <Routes>
-       <Route path="/" element={<Pageprncpl />} />
-       <Route path="/signin" element={<Signin />} />
-       <Route path="/login" element={<Login />} />
-     </Routes>
-
- </Router>
+    <Router>
+          <Navbar />
+      <Routes>
+        <Route path="/" element={<Main/>} />
+        <Route path="/search" element={<Search/>} />
+      </Routes>
+    </Router>
 
       
     </div>
