@@ -10,13 +10,13 @@ const Affich=({ title,description,img}) => {
     return (
       <section>
         
-            <div className='flex justify-start'>
-          <div className='  bg-[rgb(21,36,91)] text-[#FAFAFA]  rounded-[10px] '>
-          <img src={img} alt="" className='  px-5 py-5 flex items-center justify-center ' />
-         </div>
+            <div className='flex  w-3/4'>
+           <div className='bg-[rgb(21,36,91)]  rounded-[10px] p-4   mb-5 mr-4'>
+          <img src={img} alt="photo" className=' ' />
+          </div>
             <div>
-             <h1 className='font-bold text-19px  mb-5 '>{title}</h1>
-             <p className='font-semibold text-14px text-center  ml-7 mr-7 pl-7 pr-7 pb-5'>{description}</p>
+             <h1 className='font-extrabold text-14px  sm:text-19px  text-[#15245B]   '>{title}</h1>
+             <p className='font-normal text-11px  sm:text-14px text-[#0D0D0D]'>{description}</p>
              </div>
              </div>
 
@@ -28,23 +28,23 @@ const text =[
     {
         title: "Personnalisation de Votre Expérience",
         description: "Adaptez votre recherche selon vos intérêts grâce à des filtres et options avancés." ,
-        img: image 
+        img: image3 
     },
     {
         title: "Sauvegarde Personnalisée",
         description: "Gardez une trace de vos articles préférés pour un accès facile ultérieur." ,
-        img: image1 
+        img: image2 
     },
     
     {
         title: "Optimisation de la decouverte",
         description: "Simplifiez votre exploration grâce à des outils puissants pour une expérience utilisateur fluide." ,
-        img: image2 
+        img: image 
     },
     {
         title: "Acces facile ",
         description: "Profitez d'une passerelle conviviale vers une multitude d'articles scientifiques." ,
-        img: image3 
+        img: image1 
     }
 ]
 
@@ -55,7 +55,7 @@ function Comp() {
 
           <section>
                  <div>
-                     <div className='flex w-full h-full flex-wrap ml-10 pl-10 mb-5 pb-5 mr-4 font-signature '>
+                     <div className='flex flex-col sm:grid sm:grid-cols-2 sm:gap-2 w-full h-full  ml-10 pl-10 mb-5 pb-5 mr-4 font-signature '>
                         {
                             text.map((ptext,index) =>(
                                 <Affich {...ptext} currentIndex={currentIndex} key={index} />
