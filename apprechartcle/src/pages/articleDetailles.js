@@ -4,17 +4,15 @@ import fav from './../images/fav.svg';
 import articlicone from './../images/article.svg'
 import SearchBar from "./../components/searchbar" ;
 
-const Article = {
-    title: "Understanding Machine Learning Algorithms",
-    author: "John Smith",
-    institutions :"Ecole superieur d'informatique",
-    keyword:"Machine Learning, Algorithms, Data Science, Artificial Intelligence",
-    références:"",
-    sumup:"This article by John Smith provides an insightful overview of various machine learning algorithms commonly used in data science and artificial intelligence" ,
-    date:"12/12/2023",
-    details:"Le machine learning, ou apprentissage automatique, est une branche de l'intelligence artificielle qui révolutionne de nombreux domaines. Il permet aux ordinateurs d'apprendre et de s'améliorer à partir de données, sans être explicitement programmés pour chaque tâche. Ce champ d'étude repose sur des algorithmes et des modèles qui permettent aux machines de détecter des modèles dans les données et de prendre des décisions intelligentes en se basant sur ces modèles. Les Types de Machine Learning 1. Apprentissage Supervisé :Ce type implique des données étiquetées, où l'algorithme apprend à prédire des résultats basés sur des exemples fournis. Par exemple, la classification d'emails en spam ou non spam.                                                     2. Apprentissage Non Supervisé :Les données non étiquetées sont utilisées ici. L'algorithme trouve des structures et des modèles par lui-même. Un exemple est la segmenta                                           afficher plus...."
-}
-function ArticleDetails({ title=Article.title, author=Article.author ,institutions=Article.institutions, keyword=Article.keyword ,reference=Article.références, sumup=Article.sumup, date=Article.date ,details=Article.details}) {
+function ArticleDetails({ article }) {
+  const title = article[1];
+  const author = article[2];
+  const institutions = article[3];
+  const keyword = article[4];
+  const reference = article[5];
+  const sumup = article[6];
+  const date = article[7];
+  const details = article[8];
     const [icon, setIcon] = useState(nfav);
 
     function changeIcon() {

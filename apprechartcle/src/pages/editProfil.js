@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import edit from "./../images/editt.svg";
-
-const user = {
-  name: "MEOW123",
-  email: "Meaox123@gmail.com",
-  password: "123456789",
-};
-
-function EditProfil({ name: initialName = user.name, email: initialEmail = user.email, password: initialPassword = user.password }) {
+import  Error from "./../components/errorMessage";
+function EditProfil({ user }) {
+  const [errorMessage,setErrorMessage] = useState(null);
+  const initialName = user.name;
+  const initialEmail = user.email;
+  const initialPassword = user.password;
   const [name, setName] = useState(initialName);
   const [email, setEmail] = useState(initialEmail);
   const [oldPassword, setOldPassword] = useState("");
@@ -19,6 +17,7 @@ function EditProfil({ name: initialName = user.name, email: initialEmail = user.
   const [isEditingPassword, setIsEditingPassword] = useState(false);
 
   const handleEditName = () => {
+    setErrorMessage(null);
     setIsEditingName(true);
   };
 
@@ -27,6 +26,7 @@ function EditProfil({ name: initialName = user.name, email: initialEmail = user.
   };
 
   const handleEditPassword = () => {
+    setErrorMessage(null);
     setIsEditingPassword(true);
   };
 
@@ -37,7 +37,7 @@ function EditProfil({ name: initialName = user.name, email: initialEmail = user.
       // Save logic for email
     } else if (isEditingPassword) {
       // Check if old password is correct
-      if (oldPassword === user.password) {
+      if (oldPassword === initialPassword) {
         // Save logic for the new password
         console.log("Old password is correct. Save the new password:", newPassword);
         // Reset the password fields
@@ -45,7 +45,8 @@ function EditProfil({ name: initialName = user.name, email: initialEmail = user.
         setNewPassword("");
       } else {
         // Display an error message or take appropriate action
-        console.log("Old password is incorrect.");
+        console.log("Old password is not correct");
+        setErrorMessage("mot de passe incorrect");
       }
     }
 
@@ -63,6 +64,7 @@ function EditProfil({ name: initialName = user.name, email: initialEmail = user.
     setIsEditingName(false);
     setIsEditingEmail(false);
     setIsEditingPassword(false);
+    setErrorMessage(null);
   };
 
   return (
@@ -114,7 +116,7 @@ function EditProfil({ name: initialName = user.name, email: initialEmail = user.
         
           {isEditingPassword ? (
             <>
-               <div className="">
+               <div className="flex flex-col ">
                <input
                 type="password"
                 placeholder="Old Password"
@@ -134,7 +136,7 @@ function EditProfil({ name: initialName = user.name, email: initialEmail = user.
           ) : (
             <>
               <div className="flex justify-between items-center text-[#15245B] rounded-full p-6 bg-[#DDF7FF] font-poppins text-16px border-2 border-solid border-[#15245B] font-medium md:text-26px">
-              {user.password && "********"} {/* Display asterisks for the password */}
+              {user.password && "********"} 
               <span onClick={handleEditPassword} className="cursor-pointer ml-2">
                 <img src={edit} alt="Edit Icon" className="w-5 h-5" />
               </span>
@@ -160,6 +162,7 @@ function EditProfil({ name: initialName = user.name, email: initialEmail = user.
             </>
           )}
         </div>
+        {errorMessage && <Error message={errorMessage} />}
       </div>
     </div>
   );

@@ -21,7 +21,7 @@ function Filter({ title, icon }) {
       <div className="absolute inset-y-0 left-0 pl-3 pr-6 flex items-center">
         <img src={icon} className="h-6 w-6 text-gray-400" alt="Filter Icon" />
       </div>
-      <div className="text-[#15245B] font-poppins text-30px font-medium tracking-wide">
+      <div className="text-[#15245B] font-poppins text-20px font-medium tracking-wide">
         {title}
       </div>
       <div className="absolute  right-0 ">
@@ -67,7 +67,7 @@ const filters = [
 function Filters() {
   return (
     <div className="">
-      <h4 className="text-[#15245B] font-poppins text-30px font-bold tracking-wide uppercase m-4 md:text-40px lg:text-50px">
+      <h4 className="text-[#15245B] font-poppins text-20px font-bold tracking-wide uppercase m-4 md:text-30px lg:text-40px">
         Filtres
       </h4>
       <div className="w-full h-full">
