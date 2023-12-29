@@ -18,6 +18,10 @@ import ProfilSettings from './pages/profileSettings'
 import UserAccount from './pages/userAccount'
 import Favourites from './components/Favorites';
 import ModifierArticle from "./pages/modifierArticle"
+import Uploadbar from './components/uploadbar' ; 
+import Homeadmin from './pages/homeadmin'
+import Homemdrtr from './pages/homemdrtr'
+import Userinfo from './pages/userinfo';
 const testarticle = {
   title: "Understanding Machine Learning Algorithms",
   author: "John Smith",

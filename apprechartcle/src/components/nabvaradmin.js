@@ -1,3 +1,4 @@
+
 import React,{useState, useEffect, useRef } from 'react'
 import {AiOutlineClose,AiOutlineMenu} from 'react-icons/ai' 
 import { Link } from 'react-router-dom';
@@ -60,7 +61,7 @@ function Navbaradmin() {
                      <nav className='hidden md:flex  gap-8 font-medium font-signature text-14px sm:text-19px md:text-19px lg:text-21px mt-2 '>                           
                           
                                   <Link to="/" className={`text-[#15245B]  mt-5 mr-7  cursor-pointer ${effetActif === 'Main' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('Main')}>Accueil</Link>
-                                  <Link to="/userAccount" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'profile' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('profile')}>profile</Link>
+                                  <Link to="/editProfil" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'profile' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('profile')}>profile</Link>
                          
                       </nav>
                   </div>
@@ -77,7 +78,7 @@ function Navbaradmin() {
                          <nav className='  flex flex-col basis-full items-center font-medium font-signature text-14px sm:text-19px md:text-19px lg:text-21px mt-2 pl-10  '>
                           
                          <Link to="/" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'Main' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('Main')}>Accueil</Link>
-                         <Link to="/userAccount" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'profile' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('profile')}>profile</Link>
+                         <Link to="/editProfil" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'profile' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('profile')}>profile</Link>
                          </nav>
                       </div>
                     )
