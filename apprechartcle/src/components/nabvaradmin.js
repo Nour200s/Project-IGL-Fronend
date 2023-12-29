@@ -5,7 +5,7 @@ import Clogo from './logo' ;
 import {Menu,X} from 'lucide-react' ;
 import UserAccount from './../pages/userAccount'
 
-function Navbar() {
+function Navbaradmin() {
   const [nav,setNav]=useState(false) ;
   const handleNav=() =>{
      setNav(!nav)
@@ -59,8 +59,7 @@ function Navbar() {
                   <div className='flex justify-start'>
                      <nav className='hidden md:flex  gap-8 font-medium font-signature text-14px sm:text-19px md:text-19px lg:text-21px mt-2 '>                           
                           
-                                  <Link to="/" className={`text-[#15245B]  mt-5 mr-7  cursor-pointer ${effetActif === 'Main' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('Main')}>À propos</Link>
-                                  <Link to="/search" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'rech' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('rech')}>recherche</Link>
+                                  <Link to="/" className={`text-[#15245B]  mt-5 mr-7  cursor-pointer ${effetActif === 'Main' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('Main')}>Accueil</Link>
                                   <Link to="/userAccount" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'profile' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('profile')}>profile</Link>
                          
                       </nav>
@@ -77,9 +76,8 @@ function Navbar() {
                       <div ref={menuRef} >
                          <nav className='  flex flex-col basis-full items-center font-medium font-signature text-14px sm:text-19px md:text-19px lg:text-21px mt-2 pl-10  '>
                           
-                         <Link to="/" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'Main' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('Main')}>À propos</Link>
-                                  <Link to="/search" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'rech' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('rech')}>recherche</Link>
-                                  <Link to="/userAccount" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'profile' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('profile')}>profile</Link>
+                         <Link to="/" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'Main' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('Main')}>Accueil</Link>
+                         <Link to="/userAccount" className={`text-[#15245B]  mt-5 mr-10  cursor-pointer ${effetActif === 'profile' ? 'border-b-2 border-black' : ''}`} onClick={() => handleClic('profile')}>profile</Link>
                          </nav>
                       </div>
                     )
@@ -94,4 +92,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default Navbaradmin

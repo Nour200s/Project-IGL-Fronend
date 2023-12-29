@@ -8,10 +8,10 @@ const Optionrech=({ title,description,img}) => {
 
   return (
     <section>
-        <div className=' h-full bg-[rgb(21,36,91)] text-[#FAFAFA] rounded-[20px]  ml-6 mr-4'>
-        <img src={img} alt="" className='w-30 pt-5 sm:ml-10 sm:pl-10 mb-5 flex items-center justify-center ' />
-           <h1 className='font-bold text-19px flex items-center justify-center mb-5 '>{title}</h1>
-           <p className='font-semibold text-14px text-center  ml-7 mr-7 pl-7 pr-7 pb-5'>{description}</p>
+        <div className=' h-full w-4/5 bg-[rgb(21,36,91)] rounded-[20px]  ml-2 mb-7 pb-5 '>
+        <img src={img} alt="" className='  ml-8     ' />
+           <h1 className=' font-semibold text-13px sm:text-18px flex items-center justify-center mb-2 mt-4 mp-3 mp-3 text-[#FFFFFF]  '>{title}</h1>
+           <p className=' font-medium text-11px sm:text-14px text-center    text-[#FAFAFA] '>{description}</p>
         </div>
        
     </section>
@@ -41,8 +41,8 @@ const Options = () =>{
      return(
            <section>
                  <div>
-                     <h1 className='flex items-center justify-center  font-signature font-extrabold text-[#15245B] mt-10 pt-10 mb-10 ml-6 text-50px'> Outils de Recherche <br />Scientifique </h1>  
-                     <div className='flex w-full h-full flex-nowrap ml-6 mr-4 font-signature '>
+                     <h1 className='flex items-center justify-center  font-signature font-extrabold text-[#15245B] mt-10 pt-10 mb-10 ml-10 sm:ml-6 text-19px md:text-26px lg:text-40px'> Outils de Recherche <br />Scientifique </h1>  
+                     <div className='   flex flex-col w-full h-full sm:grid sm:grid-cols-3 sm:gap-3 ml-6 mr-4 font-signature '>
                         {
                             options.map((option,index) =>(
                                 <Optionrech {...option} currentIndex={currentIndex} key={index} />
