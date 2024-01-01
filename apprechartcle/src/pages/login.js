@@ -27,10 +27,10 @@ function Login () {
      });
      const data =  await response.json();
      if(data["Validation"]=="valid"){
-        Cookies.set("USER", data.token , { expires: 10 , path: "/" });
-     if(data["visitor"]=="user") history("/home")
-     else if (data["visitor"]=="admin") history("/admin")
-     else if (data["visitor"]=="modetateur") history("/moderateur"); 
+        Cookies.set("USER", data.visitor , { expires: 10 , path: "/" });
+        Cookies.set("NAME", data.token , { expires: 10 , path: "/" });
+        history('/') ; 
+        window.location.reload();
      }
      else {
 

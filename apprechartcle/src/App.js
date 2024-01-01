@@ -1,5 +1,5 @@
 import './index.css' ;
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Main from './pages/main';
 import Login from './pages/login';
@@ -22,6 +22,11 @@ import Uploadbar from './components/uploadbar' ;
 import Homeadmin from './pages/homeadmin'
 import Homemdrtr from './pages/homemdrtr'
 import Userinfo from './pages/userinfo';
+import Cookies from "js-cookie";
+import { useLocation } from 'react-router-dom';
+
+
+
 const testarticle = {
   title: "Understanding Machine Learning Algorithms",
   author: "John Smith",
@@ -42,20 +47,58 @@ import Homeadmin from './pages/homeadmin' ;
 import Homemdrtr from './pages/homemdrtr'; */
 
 const App = () => {
+  const  [admin,setAdmin] = useState(false)  ;   const  [user,setUser] = useState(false)  ;   const  [moderateur,setModerateur] = useState(false)  ; 
+ const  [none,setNone] = useState(false)  ; 
+  useEffect( () =>{
+      if ( Cookies.get("NAME")=== undefined ||   Cookies.get("NAME")=== null  ||   Cookies.get("NAME")=== '') 
+      {
+        setNone(true) ; 
+      }
+      else
+      {
+        if(Cookies.get("USER") == "user")  setUser(true) ; 
+        else if (Cookies.get("USER") == "admin")  setAdmin(true); 
+        else if (Cookies.get("USER") == "modetateur")  setModerateur(true) ;
+      }
+})     
   return (
     <div className="App">
     
         
-    <Router>
+    {   none && <Router>
+     
+     <Routes>
+       <Route path="/" element={<Pageprncpl />} />
+       <Route path="/signin" element={<Signin />} />
+       <Route path="/login" element={<Login />} />
+     </Routes>
+
+ </Router>
+}
+    {  user && <Router>
           <Navbar />
       <Routes>
+        <Route path="/" element={<Main/>} />
+        <Route path="/search" element={<Search/>} />
+        <Route path="/userAccount" element={<UserAccount/>} />
+      </Routes>
+    </Router>  }
+    {   admin && <Router>
+          <Navbaradmin />
+      <Routes>
+        <Route path="/" element={<Homemdrtr/>} />
+        <Route path="/userAccount" element={<UserAccount/>} />
+      </Routes>
+    </Router>   }
+    {   moderateur && <Router>
+          <Navbar />
+    <Routes>
         <Route path="/" element={<Main/>} />
         <Route path="/login" element={<Login/>} />
         <Route path="/signin" element={<Signin/>} />
         <Route path="/home" element={<Main/>} />
       </Routes>
-    </Router>
-         
+    </Router>    }   
       
 
       
