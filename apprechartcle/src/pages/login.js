@@ -4,9 +4,38 @@ import photo2 from "./../images/photo2.png" ;
 import Google from './../images/google.png' ; 
 import { Link } from 'react-router-dom';
 import Clogo from '../components/logo';
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
 
 function Login () {
+    const history = useNavigate() ;
+    async function datafetch() {
+       const  response = await  fetch("http://127.0.0.1:8000/api/login", {
+       method: "POST", 
+       mode: "cors", 
+       cache: "no-cache", 
+       credentials: "same-origin", 
+       headers: {
+         "Content-Type": "application/json",
+       },
+       redirect: "follow",
+       referrerPolicy: "no-referrer",
+       body: JSON.stringify({
+         "name" :  document.getElementsByName("name")[0].value , 
+         "password" : document.getElementsByName("password")[0].value ,
+       }), 
+     });
+     const data =  await response.json();
+     if(data["Validation"]=="valid"){
+        Cookies.set("USER", data.token , { expires: 10 , path: "/" });
+     if(data["visitor"]=="user") history("/home")
+     else if (data["visitor"]=="admin") history("/admin")
+     else if (data["visitor"]=="modetateur") history("/moderateur"); 
+     }
+     else {
 
+     }
+   }
     return(
         <div className="sm:flex  sm:w-full   ">
            
@@ -21,27 +50,25 @@ function Login () {
             <div className=" flex flex-col w-full h-full bg-[#FAFAFA] font-signature  font-extrabold mb-10 ml-10 mt-10 sm:ml-20 sm:mt-20 ">
                  
                    <h1 className=" text-[#15245B] text-24px md:text-40px  ">Bienvenue de nouveau sur<br /> <span className="text-[#FBBC05]" >Sci</span> <span className="text-[#F57581] ">Topia !</span> </h1>
-                    <form>
                         
                         <div className="font-semibold text-16px md:text-21px lg:30px text-[#15245B] mt-4 ">
                             <label >Nom Utilisateur</label>
                         </div>
                         <div>
-                        <input placeholder="Entrer votre nom" className="w-4/5 rounded-md px-2 py-2 ring-2 ring-[#15245B]  text-13px  sm:text-18px md:text-29px   mt-2  font-normal  focus:outline-none" type="text" />
+                        <input name="name" placeholder="Entrer votre nom" className="w-4/5 rounded-md px-2 py-2 ring-2 ring-[#15245B]  text-13px  sm:text-18px md:text-29px   mt-2  font-normal  focus:outline-none" type="text" />
                         </div>
                         <div className="font-semibold text-16px md:text-21px lg:30px text-[#15245B] mt-2">
                             <label >Mot de passe</label>
                         </div>
-                        <div><input placeholder="Entrer votre mot de passe" className=" w-4/5 rounded-md  text-13px  sm:text-18px md:text-29px    mt-2 p-2   ring-2 ring-[#15245B] font-normal focus:outline-none" type="password" /></div>
+                        <div><input name="password" placeholder="Entrer votre mot de passe" className=" w-4/5 rounded-md  text-13px  sm:text-18px md:text-29px    mt-2 p-2   ring-2 ring-[#15245B] font-normal focus:outline-none" type="password" /></div>
                         <div className=" text-[#15245B] mb-3 mt-4">
                             <input type="checkbox" id="remember" />
                             <label for="remember" className=" text-[#A59E9E] font-normal mr-4"> <a href="">Mot de passe oublié</a></label>
                         </div>
                         <div className="flex flex-col text-21px ">
-                        <button className="w-4/5 my-3  bg-[#15245B] text-[#FAFAFA] font-semibold rounded-full py-2 pr-8 pl-8 text-14px sm:text-19px md:text-21px">Se connecter</button>
+                        <button className="w-4/5 my-3  bg-[#15245B] text-[#FAFAFA] font-semibold rounded-full py-2 pr-8 pl-8 text-14px sm:text-19px md:text-21px"  onClick={() => { datafetch()  }}>Se connecter</button>
                          
                         </div>
-                    </form>
                     <div className="flex sm:items-center sm:justify-center font-signature font-medium text-13px sm:text-18px md:text-19px mt-3 sm:w-4/5">
                       <p className="text-[#263238] mr-1">Vous n'avez pas de compte ?</p>
                       <Link to="/signin">

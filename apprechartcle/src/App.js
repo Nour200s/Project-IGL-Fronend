@@ -37,9 +37,9 @@ const user = {
   email:"Meaox123@gmail.com",
   password:"123456789",
 };
-import Uploadbar from './components/uploadbar' ; 
+/*import Uploadbar from './components/uploadbar' ; 
 import Homeadmin from './pages/homeadmin' ;
-import Homemdrtr from './pages/homemdrtr';
+import Homemdrtr from './pages/homemdrtr'; */
 
 const App = () => {
   return (
@@ -50,8 +50,9 @@ const App = () => {
           <Navbar />
       <Routes>
         <Route path="/" element={<Main/>} />
-        <Route path="/search" element={<Search/>} />
-        <Route path="/userAccount" element={<UserAccount/>} />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/signin" element={<Signin/>} />
+        <Route path="/home" element={<Main/>} />
       </Routes>
     </Router>
          
