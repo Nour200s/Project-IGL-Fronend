@@ -39,34 +39,34 @@ function Login () {
     return(
         <div className="sm:flex  sm:w-full   ">
            
-            <div className=" sm:flex-wrap  sm:w-full sm:h-full sm:bg-[#c3eefb] sm:justify-center sm:items-center  ">
+            <div className=" sm:flex-wrap  sm:w-full sm:min-h-screen sm:bg-[#c3eefb] sm:justify-center sm:items-center  ">
                 <div className="pt-10 pl-10 md:pt-2">
                 <Clogo/>
                  </div>  
-                   <div className="hidden sm:block">
+                   <div className="hidden sm:block sm:bg-[#c3eefb]">
                    <img src={photo2} alt=""  className=" w-auto h-auto py-5 my-5 ml-10 " />
                    </div>
             </div>
             <div className=" flex flex-col w-full h-full bg-[#FAFAFA] font-signature  font-extrabold mb-10 ml-10 mt-10 sm:ml-20 sm:mt-20 ">
                  
-                   <h1 className=" text-[#15245B] text-24px md:text-40px  ">Bienvenue de nouveau sur<br /> <span className="text-[#FBBC05]" >Sci</span> <span className="text-[#F57581] ">Topia !</span> </h1>
+                   <h1 className=" text-[#15245B] text-24px sm:text-30px  md:text-40px xl:text-40px 2xl:text-50px  ">Bienvenue de nouveau sur<br /> <span className="text-[#FBBC05]" >Sci</span> <span className="text-[#F57581] ">Topia !</span> </h1>
                         
-                        <div className="font-semibold text-16px md:text-21px lg:30px text-[#15245B] mt-4 ">
+                        <div className="font-semibold text-16px  md:text-16px lg:text-18px xl:text-21px 2xl:text-26px  text-[#15245B] mt-4 ">
                             <label >Nom Utilisateur</label>
                         </div>
                         <div>
-                        <input name="name" placeholder="Entrer votre nom" className="w-4/5 rounded-md px-2 py-2 ring-2 ring-[#15245B]  text-13px  sm:text-18px md:text-29px   mt-2  font-normal  focus:outline-none" type="text" />
+                        <input name="name" placeholder="Entrer votre nom" className="w-4/5 rounded-md px-2 py-2 ring-2 ring-[#15245B]  text-13px  sm:text-15px md:text-18px xl:text-19px 2xl:text-21px   mt-2  font-normal  focus:outline-none" type="text" />
                         </div>
-                        <div className="font-semibold text-16px md:text-21px lg:30px text-[#15245B] mt-2">
+                        <div className="font-semibold text-16px  md:text-16px lg:text-18px xl:text-21px 2xl:text-26px  text-[#15245B] mt-2">
                             <label >Mot de passe</label>
                         </div>
-                        <div><input name="password" placeholder="Entrer votre mot de passe" className=" w-4/5 rounded-md  text-13px  sm:text-18px md:text-29px    mt-2 p-2   ring-2 ring-[#15245B] font-normal focus:outline-none" type="password" /></div>
+                        <div><input name="password" placeholder="Entrer votre mot de passe" className=" w-4/5 rounded-md  text-13px  sm:text-15px md:text-18px xl:text-19px 2xl:text-21px    mt-2 p-2   ring-2 ring-[#15245B] font-normal focus:outline-none" type="password" /></div>
                         <div className=" text-[#15245B] mb-3 mt-4">
                             <input type="checkbox" id="remember" />
                             <label for="remember" className=" text-[#A59E9E] font-normal mr-4"> <a href="">Mot de passe oublié</a></label>
                         </div>
                         <div className="flex flex-col text-21px ">
-                        <button className="w-4/5 my-3  bg-[#15245B] text-[#FAFAFA] font-semibold rounded-full py-2 pr-8 pl-8 text-14px sm:text-19px md:text-21px"  onClick={() => { datafetch()  }}>Se connecter</button>
+                        <button className="w-4/5 my-3  bg-[#15245B] text-[#FAFAFA] font-semibold rounded-full py-2 pr-8 pl-8 text-14px sm:text-15px md:text-19px lg:text-21px  xl:text-21px 2xl:text-24px"  onClick={() => { datafetch()  }}>Se connecter</button>
                          
                         </div>
                     <div className="flex sm:items-center sm:justify-center font-signature font-medium text-13px sm:text-18px md:text-19px mt-3 sm:w-4/5">

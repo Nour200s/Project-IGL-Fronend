@@ -3,6 +3,7 @@ import Logo from "./../images/logo.png" ;
 import image from "./../images/photo.png" ; 
 import { Link } from 'react-router-dom';
 import Clogo from '../components/logo';
+import Cmppagprncp from './../components/cmppagprncp'
 
 
 function Pageprncpl(){
@@ -41,10 +42,15 @@ function Pageprncpl(){
 
              </div>
              </div>
-             <div className="hidden sm:block image">
+             <div className=" mb-5 hidden sm:block image">
                  <img src={image}  alt="photo" className=" float-right  object-cover  " />
               </div>
               </div>
+              <div className="bg-[#FFFFFF] pt-10  font-signature   ">
+
+              <Cmppagprncp/>
+              </div>
+              
 
       </div>
      

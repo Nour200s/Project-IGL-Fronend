@@ -31,42 +31,42 @@ function Signin() {
     }
   }
   return (
-    <div className=" sm:flex  sm:w-full  sm:max-h-screen    ">
+    <div className="sm:flex  sm:w-full    ">
            
            
-           <div className=" sm:flex-wrap sm:w-full   sm:h-full  sm:bg-[#c3eefb] sm:justify-center   sm:items-center  ">
+           <div className="  sm:flex-wrap sm:w-full   sm:min-h-screen   sm:bg-[#c3eefb] sm:justify-center   sm:items-center  ">
            <div className=" pt-10 pl-10 md:pt-2">
            <Clogo/>
           </div>  
-            <div className="hidden md:block">
-            <img src={photo3} alt=""  className="w-auto h-auto py-5 my-5 ml-10" />
+            <div className=" lg:ml-15 hidden sm:block sm:bg-[#c3eefb]">
+            <img src={photo3} alt=""  className="w-auto h-auto py-5 my-5 ml-10 " />
             </div>
            </div>
            
             <div className="w-full h-full bg-[#FAFAFA] font-signature font-extrabold  ml-10 mt-10 sm:ml-20 sm:mt-10  ">
                  
-                   <h1 className=" text-[#15245B]  text-24px md:text-40px ">Bienvenue sur<br /> <span className="text-[#FBBC05]" >Sci</span> <span className="text-[#F57581] ">Topia !</span> </h1>
-                        <div className='font-semibold text-16px md:text-21px lg:30px text-[#15245B] mt-4'>
+                   <h1 className=" text-[#15245B]  text-24px sm:text-30px  md:text-40px xl:text-40px 2xl:text-50px ">Bienvenue sur<br /> <span className="text-[#FBBC05]" >Sci</span> <span className="text-[#F57581] ">Topia !</span> </h1>
+                        <div className='font-semibold text-16px  md:text-16px lg:text-18px xl:text-21px 2xl:text-26px   text-[#15245B] mt-4'>
                             <label >Nom Utilisateur</label>
                         </div>
-                        <div> <input name='name' placeholder="Entrer votre nom" className=" w-4/5 rounded-md text-13px  sm:text-18px md:text-29px  ring-2 ring-[#15245B] p-2 text-[#A59E9E] font-normal   focus:outline-none" type="text" /></div>
-                        <div className='mt- 2'>
-                            <label className='font-semibold text-16px md:text-21px lg:30px text-[#15245B]  ' >E-mail</label>
+                        <div> <input name='name' placeholder="Entrer votre nom" className=" mt-1  w-4/5 rounded-md text-13px  sm:text-15px md:text-18px xl:text-19px 2xl:text-21px ring-2 ring-[#15245B] p-2 text-[#A59E9E] font-normal   focus:outline-none" type="text" /></div>
+                        <div className='mt-1'>
+                            <label className='font-semibold  text-16px  md:text-16px lg:text-18px xl:text-21px 2xl:text-26px text-[#15245B]  ' >E-mail</label>
                         </div>
-                        <div> <input name='email' placeholder="Entrer votre E-mail" className="w-4/5 rounded-md text-13px  sm:text-18px md:text-29px ring-2 ring-[#15245B]  p-2 text-[#A59E9E] font-normal    focus:outline-none" type="text" /></div>
-                        <div className='font-semibold text-16px md:text-21px lg:30px text-[#15245B] mt-2 '>
+                        <div> <input name='email' placeholder="Entrer votre E-mail" className=" mt-1 w-4/5 rounded-md text-13px  sm:text-15px md:text-18px xl:text-19px 2xl:text-21px ring-2 ring-[#15245B]  p-2 text-[#A59E9E] font-normal    focus:outline-none" type="text" /></div>
+                        <div className='font-semibold  text-16px  md:text-16px lg:text-18px xl:text-21px 2xl:text-26px text-[#15245B] mt-1 '>
                             <label >Mot de passe</label>
                         </div>
-                        <div><input name='password' placeholder="Entrer votre mot de passe" className=" w-4/5 rounded-md  text-13px  sm:text-18px md:text-29px  md:text-21pxmt-2 p-2   ring-2 ring-[#15245B] text-[#A59E9E] font-normal  focus:outline-none" type="password" /></div>
+                        <div><input name='password' placeholder="Entrer votre mot de passe" className=" mt-1 w-4/5 rounded-md text-13px  sm:text-15px md:text-18px xl:text-19px 2xl:text-21px   p-2   ring-2 ring-[#15245B] text-[#A59E9E] font-normal  focus:outline-none" type="password" /></div>
                         <div className=" text-[#15245B] py-2 mt-2">
-                            <p className=" text-[#A59E9E] font-normal text-14px sm:text-18px md:text-19px  "><input className="mr-2   " type="checkbox" />J'accepte les conditions d'utilisation et <br /> la politique de confidentialité</p>
+                            <p className=" text-[#A59E9E] font-normal text-14px sm:text-15px md:text-15px xl:text-18px 2xl:text-18px  lg:text-15px  2xl:mr-10  2xl:pr-10 mr-5  "><input className="mr-2   " type="checkbox" />J'accepte les conditions d'utilisation et la politique de confidentialité</p>
                         </div>
-                        <button className="w-4/5 my-3  bg-[#15245B] text-[#FAFAFA] font-semibold rounded-full py-3 px-8 text-14px sm:text-19px md:text-21px " onClick={()  =>datafetch()}>S'inscrire</button>
+                        <button className="w-4/5 my-3  bg-[#15245B] text-[#FAFAFA] font-semibold rounded-full py-3 px-8 text-14px sm:text-15px md:text-19px lg:text-21px  xl:text-21px 2xl:text-24px  " onClick={()  =>datafetch()}>S'inscrire</button>
                       
-                      <div className="flex sm:items-center sm:justify-center font-medium text-13px sm:text-18px md:text-19px ml-4  mt-3 sm:w-4/5">
-                      <p className=' text-[#263238] mr-1'>Vous avez déjà un compte?</p>
+                      <div className="md:flex md:items-center md:justify-center md:mb-5 font-medium text-13px sm:text-15px md:text-15px lg:text-18px  xl:text-19px 2xl:text-21px  ml-4  mt-3 sm:w-4/5">
+                      <p className=' text-[#263238] mr-1 sm:mb-2 md:mb-0 '>Vous avez déjà un compte?</p>
                       <Link to="/login">
-                      <button className="text-[#F57581] ">Se connecter</button>
+                      <button className="text-[#F57581] sm:mb-5 md:mb-0  ">Se connecter</button>
                    </Link>
                       </div>
 

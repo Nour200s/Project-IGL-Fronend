@@ -1,4 +1,3 @@
-
 import React,{useState, useEffect, useRef } from 'react'
 import image2 from './../images/V1.png'
 import  image3 from './../images/V2.png'
@@ -17,9 +16,9 @@ const Affich=({ Nom,prenom,Email}) => {
              <div className=''>
              <p className=' ml-2  font-medium text-11px sm:text-14px md:text-19px  text-[#15245B]'>{Email}</p>
              </div>
-             <div className="flex mb-2 sm:ml-10">
-              <button  className=" p-3  sm:px-7 sm:py-3 bg-[#15245B] text-[#FAFAFA] text-11px sm:text-14px md:text-19px   sm:ml-2 sm:mb-2  mr-1 rounded-full sm:pr-6 sm:pl-6"> Modifier</button>
-              <button className=" p-2 sm:px-10 sm:py-2 bg-[#FAFAFA] text-[#15245B] text-11px sm:text-14px md:text-19px  rounded-full border-2 border-[#15245B] sm:pr-4 sm:pl-4 ">Supprimer</button>
+             <div className=" font-medium mt-2   mb-2 sm:ml-10">
+             <button  className=" px-7 py-1  sm:px-14 sm:py-1 bg-[#15245B] text-[#FAFAFA] text-11px sm:text-14px md:text-19px   sm:ml-2 sm:mb-2  mr-1 rounded-full sm:pr-6 sm:pl-6"> Modifier</button>
+              <button className=" px-5 py-1 sm:px-10 sm:py-1 bg-[#FAFAFA] text-[#15245B] text-11px sm:text-14px md:text-19px  rounded-full border-2 border-[#15245B] sm:pr-4 sm:pl-4 ">Supprimer</button>
 
              </div>
 

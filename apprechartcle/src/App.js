@@ -8,6 +8,7 @@ import SearchResultPage from './pages/searchResult';
 import ResultsPage from './components/Results';
 import Navbar from './components/Navbar';
 import Navbaradmin from './components/nabvaradmin';
+import Navbarmdrtr from './components/navbarmdrtr';
 import Signin from './pages/signin';
 import Pageprncpl from './pages/pageprncpl';
 import Options from './components/optionrech';
@@ -22,6 +23,7 @@ import Uploadbar from './components/uploadbar' ;
 import Homeadmin from './pages/homeadmin'
 import Homemdrtr from './pages/homemdrtr'
 import Userinfo from './pages/userinfo';
+import  Error from "./components/errorMessage";
 import Cookies from "js-cookie";
 import { useLocation } from 'react-router-dom';
 
@@ -60,12 +62,17 @@ const App = () => {
         else if (Cookies.get("USER") == "admin")  setAdmin(true); 
         else if (Cookies.get("USER") == "modetateur")  setModerateur(true) ;
       }
-})     
+})   
+
+const mdrtrData = {
+  name: "John Doe",
+  email: "john.doe@example.com",
+  password: "password123",
+};
+
   return (
     <div className="App">
-    
-        
-    {   none && <Router>
+            {   none && <Router>
      
      <Routes>
        <Route path="/" element={<Pageprncpl />} />
@@ -86,22 +93,24 @@ const App = () => {
     {   admin && <Router>
           <Navbaradmin />
       <Routes>
+        <Route path="/" element={<Homeadmin/>} />
+        <Route path="/editProfil" element={<EditProfil/>} />
+      </Routes>
+    </Router>    }
+    {   moderateur &&  <Router>
+    
+          <Navbarmdrtr />
+      <Routes>
         <Route path="/" element={<Homemdrtr/>} />
-        <Route path="/userAccount" element={<UserAccount/>} />
-      </Routes>
-    </Router>   }
-    {   moderateur && <Router>
-          <Navbar />
-    <Routes>
-        <Route path="/" element={<Main/>} />
-        <Route path="/login" element={<Login/>} />
-        <Route path="/signin" element={<Signin/>} />
-        <Route path="/home" element={<Main/>} />
-      </Routes>
-    </Router>    }   
-      
+        <Route path="/userinfo" element={<Userinfo mdrtr={mdrtrData }/>} />
+      </Routes>  
+    </Router> 
+     
+    
+    } 
 
-      
+
+   
     </div>
   );
 };

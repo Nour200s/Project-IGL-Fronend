@@ -11,8 +11,8 @@ const Affich=({ title,description,img}) => {
       <section>
         
             <div className='flex  w-3/4'>
-           <div className='bg-[rgb(21,36,91)]  rounded-[10px] p-4   mb-5 mr-4'>
-          <img src={img} alt="photo" className=' ' />
+           <div className=' rounded-[10px] bg-[rgb(21,36,91)]     mb-5 mr-4'>
+          <img src={img} alt="photo" className=' p-4 ' />
           </div>
             <div>
              <h1 className='font-extrabold text-14px  sm:text-19px  text-[#15245B]   '>{title}</h1>
@@ -55,7 +55,7 @@ function Comp() {
 
           <section>
                  <div>
-                     <div className='flex flex-col sm:grid sm:grid-cols-2 sm:gap-2 w-full h-full  ml-10 pl-10 mb-5 pb-5 mr-4 font-signature '>
+                     <div className='flex flex-col sm:grid sm:grid-cols-2  w-full h-full   pl-10 mb-5 pb-5  font-signature '>
                         {
                             text.map((ptext,index) =>(
                                 <Affich {...ptext} currentIndex={currentIndex} key={index} />
