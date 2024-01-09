@@ -59,7 +59,7 @@ const App = () => {
       else
       {
         if(Cookies.get("USER") == "user")  setUser(true) ; 
-        else if (Cookies.get("USER") == "admin")  setAdmin(true); 
+        else if (Cookies.get("USER") == "administrateur")  setAdmin(true); 
         else if (Cookies.get("USER") == "modetateur")  setModerateur(true) ;
       }
 })   
