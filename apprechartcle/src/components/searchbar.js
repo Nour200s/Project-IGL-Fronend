@@ -2,7 +2,7 @@ import React from 'react';
 import { ReactComponent as LoopIcon }from "./../images/loop.svg" ;
 const SearchBar = () => {
   return (
-    <div className="relative flex items-center w-full md:w-3/4 lg:w-1/2 ">
+    <div className="relative flex items-center w-full md:w-3/4 lg:w-1/2 " id="id_search">
       <input
         type="text"
         placeholder="Chercher par Titre, Auteur, Mots-clés.."
