@@ -22,7 +22,7 @@ function Userinfo ({ mdrtr }) {
               </div>
              
        
-              <div className='p-2 bg-[#15245B] text-[#FAFAFA] font-normal flex justify-center items-center text-14px   sm:text-19px'>
+              <div className=' p-2 bg-[#15245B] text-[#FAFAFA] font-normal flex justify-center items-center text-14px   sm:text-19px'>
                 <h1>Copyright © 2023 SciTopia  Tous droits réservés.</h1>
              </div>
         </div>

@@ -3,6 +3,9 @@ import  Error from "./../components/errorMessage";
 import React, { useState } from "react";
 
 function Infosidebar({ mdrtr }){
+  const [errorMessage,setErrorMessage] = useState(null);
+ 
+  
 
   
     const initialName = mdrtr.name;
@@ -56,6 +59,7 @@ function Infosidebar({ mdrtr }){
             // Save logic for the new password
             console.log("Old password is correct. Save the new password:", newPassword);
           } else {
+            setErrorMessage("Mot de passe non valide");
             // Display an error message or take appropriate action
             console.log("Old password is not correct");
           }
@@ -70,6 +74,33 @@ function Infosidebar({ mdrtr }){
    
       };
 
+      const [emailError, setEmailError] = useState('');
+      const handleEmailChange = (e) => {
+        setEmail(e.target.value);
+    
+        // Validation personnalisée
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        setEmailError(emailRegex.test(e.target.value) ? '' : 'Adresse e-mail non valide');
+      };
+      const [passwordError, setPasswordError] = useState('');
+
+      const handlePasswordChange = (e) => {
+        setOldPassword(e.target.value)
+    
+      
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        setPasswordError(passwordRegex.test(e.target.value) ? '' : 'Le mot de passe doit contenir au moins 8 caractères, dont au moins une lettre et un chiffre');
+      };
+      
+      const [passwordNewError, setPasswordNewError] = useState('');
+
+      const handlePasswordNewChange = (e) => {
+        setNewPassword(e.target.value)
+    
+      
+        const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        setPasswordNewError(passwordRegex.test(e.target.value) ? '' : 'Le mot de passe doit contenir au moins 8 caractères, dont au moins une lettre et un chiffre');
+      };
      
 
 
@@ -98,14 +129,18 @@ function Infosidebar({ mdrtr }){
                 <div> 
                 {isEditingEmail ? (
             <input
-              type="text"
+              type="email" 
               className=" w-4/5 text-11px sm:text-19px md:text-21px  ring-2 ring-[#15245B] ml-10 mr-10 mt-2 p-2 text-[#000000] font-normal   focus:outline-none rounded-[20px] bg-white"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={ handleEmailChange}
+              
+              
             />
           ) : (
-            <div  className=" w-4/5 text-11px sm:text-19px md:text-21px  ring-2 ring-[#15245B] ml-10 mr-10 mt-2 p-2 text-[#000000] font-normal   focus:outline-none rounded-[20px] bg-white" onClick={handleEditEmail}>{email}</div>
+            <div  className=" w-4/5 text-11px sm:text-19px md:text-21px  ring-2 ring-[#15245B] ml-10 mr-10 mt-2 p-2 text-[#000000] font-normal   focus:outline-none rounded-[20px] bg-white" value={email}  type="email"      onClick={handleEditEmail}>{email}</div>
           )}
+           {emailError && (
+                               <div className="text-red-500 mt-1 ml-10 text-sm font-signature font-medium">{emailError}</div> )}
           </div>
                 
                 <div className="ml-10 pt-5">
@@ -118,10 +153,14 @@ function Infosidebar({ mdrtr }){
                         type="password"
                         value={oldPassword}
                         className="w-4/5 text-11px sm:text-19px md:text-21px  ring-2 ring-[#15245B] ml-10 mr-10 mt-2 p-2 text-[#000000] font-normal   focus:outline-none rounded-[20px] bg-white"
-                        onChange={(e) => setOldPassword(e.target.value)}
+                         onChange={handlePasswordChange}
                            />
                         ) : (
                          <div className="w-4/5 text-11px sm:text-19px md:text-21px  ring-2 ring-[#15245B] ml-10 mr-10 mt-2 p-2 text-[#000000] font-normal   focus:outline-none rounded-[20px] bg-white" onClick={handleEditOldPassword}>{oldPassword}</div>
+                         )}
+
+                         {passwordError && (
+                                <div className="text-red-500  ml-10 mt-1 font-signature text-sm font-medium">{passwordError}</div>
                          )}
                   </div>
                 
@@ -134,15 +173,19 @@ function Infosidebar({ mdrtr }){
                          type="password"
                          value={newPassword}
                          className=" w-4/5 text-11px sm:text-19px md:text-21px  ring-2 ring-[#15245B] mb-3 sm:mb-10 ml-10 mr-10 mt-2 p-2 text-[#000000] font-normal   focus:outline-none rounded-[20px] bg-white"
-                        onChange={(e) => setNewPassword(e.target.value)}
+                        onChange={ handlePasswordNewChange}
                         />
                         ) : (
-                         <div className="w-4/5 text-11px sm:text-19px md:text-21px  ring-2 ring-[#15245B] mb-3 sm:mb-10  ml-10 mr-10 mt-2 p-2 text-[#000000] font-normal   focus:outline-none rounded-[20px] bg-white" onClick={handleEditPassword}>{newPassword}</div>
+                         <div className="w-4/5 text-11px sm:text-19px md:text-21px  ring-2 ring-[#15245B] mb-1 sm:mb-10  ml-10 mr-10 mt-2 p-2 text-[#000000] font-normal   focus:outline-none rounded-[20px] bg-white"  value={newPassword}  onClick={handleEditPassword} type="password">{newPassword}</div>
                         )}
                      
+                     {passwordNewError && (
+                                <div className="text-red-500  ml-10 mt-1 font-signature text-sm font-medium">{passwordNewError}</div>
+                         )}
                 </div>
-              
+                  
             </form>
+            {errorMessage && <Error message={errorMessage} />}
         </div>
         <div disabled={!isFormDirty} onClick={handleSave} className='flex items-center sm:justify-end  justify-center'>
         <button className=' mt-3 mb-5 mr-10 px-10 py-2 bg-[#15245B]  text-[#c3eefb] text-11px sm:text-14px md:text-19px   rounded-full block '>Save</button>

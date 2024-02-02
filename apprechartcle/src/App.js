@@ -69,50 +69,55 @@ const mdrtrData = {
   email: "john.doe@example.com",
   password: "password123",
 };
+const userData = {
+  name: "John Doe",
+  email: "john.doe@example.com",
+  password: "password123",
+};
 
-  return (
-    <div className="App">
-            {   none && <Router>
-     
-     <Routes>
-       <Route path="/" element={<Pageprncpl />} />
-       <Route path="/signin" element={<Signin />} />
-       <Route path="/login" element={<Login />} />
-     </Routes>
-
- </Router>
-}
-    {  user && <Router>
-          <Navbar />
-      <Routes>
-        <Route path="/" element={<Main/>} />
-        <Route path="/search" element={<Search/>} />
-        <Route path="/userAccount" element={<UserAccount/>} />
-      </Routes>
-    </Router>  }
-    {   admin && <Router>
-          <Navbaradmin />
-      <Routes>
-        <Route path="/" element={<Homeadmin/>} />
-        <Route path="/editProfil" element={<EditProfil/>} />
-      </Routes>
-    </Router>    }
-    {   moderateur &&  <Router>
-    
-          <Navbarmdrtr />
-      <Routes>
-        <Route path="/" element={<Homemdrtr/>} />
-        <Route path="/userinfo" element={<Userinfo mdrtr={mdrtrData }/>} />
-      </Routes>  
-    </Router> 
-     
-    
-    } 
-
-
+return (
+  <div className="App">
+          {   none && <Router>
    
-    </div>
-  );
+   <Routes>
+     <Route path="/" element={<Pageprncpl />} />
+     <Route path="/signin" element={<Signin />} />
+     <Route path="/login" element={<Login />} />
+   </Routes>
+
+</Router>
+}
+  {  user && <Router>
+        <Navbar />
+    <Routes>
+      <Route path="/" element={<Main/>} />
+      <Route path="/search" element={<Search/>} />
+      <Route path="/userAccount" element={<UserAccount/>} />
+    </Routes>
+  </Router>  }
+  {   admin && <Router>
+        <Navbaradmin />
+    <Routes>
+      <Route path="/" element={<Homeadmin/>} />
+      <Route path="/editProfil" element={<EditProfil/>} />
+    </Routes>
+  </Router>    }
+  {   moderateur &&  <Router>
+  
+        <Navbarmdrtr />
+    <Routes>
+      <Route path="/" element={<Homemdrtr/>} />
+      <Route path="/userinfo" element={<Userinfo mdrtr={mdrtrData }/>} />
+    </Routes>  
+  </Router> 
+   
+  
+  } 
+
+
+ 
+  </div>
+);
 };
 
 export default App;

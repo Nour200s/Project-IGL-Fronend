@@ -1,4 +1,4 @@
-import React from "react" ; 
+import React,  { useState } from "react" ; 
 import Logo from "./../images/logo.png" ;
 import photo2 from "./../images/photo2.png" ;
 import Google from './../images/google.png' ; 
@@ -6,8 +6,20 @@ import { Link } from 'react-router-dom';
 import Clogo from '../components/logo';
 import { useNavigate } from "react-router-dom";
 import Cookies from "js-cookie";
+import  Error from "./../components/errorMessage";
 
 function Login () {
+    const [errorMessage,setErrorMessage] = useState(null);
+    const [password, setPassword] = useState('');
+    const [passwordError, setPasswordError] = useState('');
+  
+    const handlePasswordChange = (e) => {
+      setPassword(e.target.value);
+  
+    
+      const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+      setPasswordError(passwordRegex.test(e.target.value) ? '' : 'Le mot de passe doit contenir au moins 8 caractères, dont au moins une lettre et un chiffre');
+    };
     const history = useNavigate() ;
     async function datafetch() {
        const  response = await  fetch("http://127.0.0.1:8000/api/login", {
@@ -33,7 +45,7 @@ function Login () {
         window.location.reload();
      }
      else {
-
+      setErrorMessage("utilisateur deja existe");
      }
    }
     return(
@@ -60,7 +72,10 @@ function Login () {
                         <div className="font-semibold text-16px  md:text-16px lg:text-18px xl:text-21px 2xl:text-26px  text-[#15245B] mt-2">
                             <label >Mot de passe</label>
                         </div>
-                        <div><input name="password" placeholder="Entrer votre mot de passe" className=" w-4/5 rounded-md  text-13px  sm:text-15px md:text-18px xl:text-19px 2xl:text-21px    mt-2 p-2   ring-2 ring-[#15245B] font-normal focus:outline-none" type="password" /></div>
+                        <div><input name="password" placeholder="Entrer votre mot de passe" className=" w-4/5 rounded-md  text-13px  sm:text-15px md:text-18px xl:text-19px 2xl:text-21px    mt-2 p-2   ring-2 ring-[#15245B] font-normal focus:outline-none" type="password"  value={password}  onChange={handlePasswordChange}/></div>
+                        {passwordError && (
+                                <div className="text-red-500 font-signature text-sm font-medium">{passwordError}</div>
+                         )}
                         <div className=" text-[#15245B] mb-3 mt-4">
                             <input type="checkbox" id="remember" />
                             <label for="remember" className=" text-[#A59E9E] font-normal mr-4"> <a href="">Mot de passe oublié</a></label>
@@ -77,6 +92,7 @@ function Login () {
                       </div>
 
             </div>
+            {errorMessage && <Error message={errorMessage} />}
          </div>
 
 
