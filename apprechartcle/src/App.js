@@ -77,7 +77,7 @@ const userData = {
 
 return (
   <div className="App">
-        {/*   {   none && <Router>
+ {/*          {   none && <Router>
    
    <Routes>
      <Route path="/" element={<Pageprncpl />} />
@@ -86,28 +86,29 @@ return (
    </Routes>
 
 </Router>
-}
-  {  user && */} <Router>
+} */}
+  {/* {  user && <Router>
         <Navbar />
     <Routes>
       <Route path="/" element={<Main/>} />
       <Route path="/search" element={<Search/>} />
       <Route path="/userAccount" element={<UserAccount/>} />
     </Routes>
-  </Router>  {/* }
-  {   admin && <Router>
+  </Router> } */}  
+  {/* {   admin && <Router>
         <Navbaradmin />
     <Routes>
       <Route path="/" element={<Homeadmin/>} />
       <Route path="/editProfil" element={<EditProfil/>} />
     </Routes>
-  </Router>    }
-  {   moderateur &&  <Router>
+  </Router>    } */}
+  {   /* moderateur &&   */<Router>
   
         <Navbarmdrtr />
     <Routes>
       <Route path="/" element={<Homemdrtr/>} />
       <Route path="/userinfo" element={<Userinfo mdrtr={mdrtrData }/>} />
+      <Route path="/modifrtcl/:pk" element={<ModifierArticle />} />
     </Routes>  
   </Router> 
    
@@ -115,7 +116,7 @@ return (
   } 
 
 
-  */}
+ 
   </div>
 );
 };

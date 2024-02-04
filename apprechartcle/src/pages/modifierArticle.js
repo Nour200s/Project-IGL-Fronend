@@ -1,9 +1,27 @@
-import React, { useState } from "react";
+import React, { useState ,useEffect } from "react";
 import editIcon from "./../images/editt.svg";
 import ArticleIcon from "./../images/article.svg";
 import SearchBar from "./../components/searchbar";
+import { useParams } from 'react-router-dom';
 
-function ModifierArticle({ article }) {
+function ModifierArticle() {
+  const param = useParams()
+  const artid = param.pk
+  console.log(artid)
+  let [article, setArticle] = useState(null);
+  let response
+
+  useEffect(() => {
+    getArticle();
+  }, [artid]);
+  let getArticle = async () => {
+    let response = await fetch(`/api/article/${artid}`);
+    let data = await response.json();
+    setArticle(data);
+  }
+  console.log(article)
+
+
   const [editedArticle, setEditedArticle] = useState({ ...article });
   const [editableField, setEditableField] = useState(null);
 
