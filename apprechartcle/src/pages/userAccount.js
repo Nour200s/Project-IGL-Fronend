@@ -6,8 +6,11 @@ import deconnecte from './../images/deconnecter.svg';
 import Favoris from "../components/Favorites";
 import EditProfil from "./editProfil";
 import ProfilSettings from "./profileSettings";
+import Cookies from "js-cookie";
+import { useNavigate } from 'react-router-dom';
 
 function UserAccount({user}) {
+  const history = new useNavigate() ; 
   const [activeTab, setActiveTab] = useState("favorites");
 
   const renderContent = () => {
@@ -51,7 +54,10 @@ function UserAccount({user}) {
             </div>
             <div className="flex items-center space-x-4 md:mt-60 cursor-pointer" onClick={() => setActiveTab("logout")}>
               <img src={deconnecte} alt="" className="h-5 w-5" />
-              <p className="text-[#FAFAFA] text-8px md:text-16px lg:text-20px "> Deconnecter </p>
+                 <button type="button"  onClick={ () => {
+                    Cookies.remove('USER');
+                    history("/") ; 
+                  }}  >  <p className="text-[#FAFAFA] text-8px md:text-16px lg:text-20px "> Deconnecter </p> </button>
             </div>
           </div>
         </div>

@@ -77,7 +77,7 @@ const userData = {
 
 return (
   <div className="App">
-          {   none && <Router>
+        {/*   {   none && <Router>
    
    <Routes>
      <Route path="/" element={<Pageprncpl />} />
@@ -87,14 +87,14 @@ return (
 
 </Router>
 }
-  {  user && <Router>
+  {  user && */} <Router>
         <Navbar />
     <Routes>
       <Route path="/" element={<Main/>} />
       <Route path="/search" element={<Search/>} />
       <Route path="/userAccount" element={<UserAccount/>} />
     </Routes>
-  </Router>  }
+  </Router>  {/* }
   {   admin && <Router>
         <Navbaradmin />
     <Routes>
@@ -115,7 +115,7 @@ return (
   } 
 
 
- 
+  */}
   </div>
 );
 };
