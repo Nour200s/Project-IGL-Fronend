@@ -1,5 +1,5 @@
 import Infosidebar from "../components/infosidbar";
-import Accountsidebar from "../components/accountsidebar";
+import Accountsidebar2 from "../components/accountsidebar2";
 
 
 function Userinfo ({ mdrtr }) {
@@ -13,7 +13,7 @@ function Userinfo ({ mdrtr }) {
         <div className='bg-[#c3eefb] min-h-screen font-signature'>
               <div className="flex flex-col sm:grid sm:grid-cols-2   ">
                   <div className=" w-3/4 p-4 ">
-                  <Accountsidebar/>
+                  <Accountsidebar2/>
                  </div>
                  <div className="  p-10  sm:m-0 sm:mr-10 sm:p-0">
                  <Infosidebar mdrtr={mdrtr }/>

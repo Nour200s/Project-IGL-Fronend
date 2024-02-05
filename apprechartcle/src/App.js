@@ -24,6 +24,7 @@ import Homeadmin from './pages/homeadmin'
 import Homemdrtr from './pages/homemdrtr'
 import Userinfo from './pages/userinfo';
 import  Error from "./components/errorMessage";
+import Accountsidebar2 from "./components/accountsidebar2";
 import Cookies from "js-cookie";
 import { useLocation } from 'react-router-dom';
 
@@ -107,8 +108,10 @@ return (
         <Navbarmdrtr />
     <Routes>
       <Route path="/" element={<Homemdrtr/>} />
+      <Route path="/Accountsidebar2" element={<Accountsidebar2/>} />
       <Route path="/userinfo" element={<Userinfo mdrtr={mdrtrData }/>} />
       <Route path="/modifrtcl/:pk" element={<ModifierArticle />} />
+      <Route path="/login" element={<Login />} />
     </Routes>  
   </Router> 
    
